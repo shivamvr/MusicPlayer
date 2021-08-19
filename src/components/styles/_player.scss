@@ -1,0 +1,63 @@
+.player{
+    min-height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+.time-control{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    input{
+        cursor: pointer;
+        background: transparent;
+        width: 100%;
+        -webkit-appearance: none;
+    } 
+  
+}
+
+.player-controlls{
+ width: 40%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 1rem;
+ svg{
+     cursor: pointer;
+ }
+}
+input[type = "range"]{
+    &:focus{
+        outline: none;
+    }
+    &::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+
+}
+
+.track{
+ margin: 0 1rem;
+ border-radius: 1.5rem;
+ width: 100%;
+ height: 1.2rem;
+ overflow: hidden;
+ position: relative;
+ background: lightblue;
+}
+.animate-track{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.2rem;
+    transform: translateX(0%);
+    pointer-events: none;
+    background-color: #ccc;
+    transition: all ease-in 0.05s;
+}

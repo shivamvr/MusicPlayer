@@ -1,0 +1,39 @@
+
+nav{
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2rem ;
+    padding-right: 5rem;
+    button{
+        margin-right: 2.8rem;
+        border: 2px solid rgb(65,65,65);
+        border-radius: .2rem;
+        background: transparent;
+        color: rgb(65,65,65);
+        transition: all ease-in 0.3s;
+        padding: .7rem;
+        cursor: pointer;
+        &:hover{
+            color: #FFF;
+            background: rgb(65,65,65);
+        }
+        span{
+            margin-right: .4rem;
+        }
+    }
+    h1{ 
+        margin-left: 7rem;
+        font-size: 180%;
+        font-weight: 500;
+    }
+}
+.moon{
+    margin-left: .4rem;
+    font-size: 80%;
+    cursor: pointer;
+    &:hover{
+        font-size: 78%;
+    }
+}
