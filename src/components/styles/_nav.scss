@@ -1,30 +1,31 @@
 
 nav{
+    margin: 0 auto;
+    padding-top: 5vh;
+    width: 50%;
     min-height: 10vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 2rem ;
-    padding-right: 5rem;
     button{
-        margin-right: 2.8rem;
+        z-index: 2;
         border: 2px solid rgb(65,65,65);
         border-radius: .2rem;
         background: transparent;
         color: rgb(65,65,65);
         transition: all ease-in 0.3s;
-        padding: .7rem;
+        padding: 1.5%;
         cursor: pointer;
         &:hover{
             color: #FFF;
             background: rgb(65,65,65);
         }
         span{
-            margin-right: .4rem;
+            font-size: 120%;
+            margin-right: 5px;
         }
-    }
+     }
     h1{ 
-        margin-left: 7rem;
         font-size: 180%;
         font-weight: 500;
     }
@@ -37,3 +38,9 @@ nav{
         font-size: 78%;
     }
 }
+
+@media  screen and (max-width: 900px) {
+    nav{
+        width: 80%;
+    }
+    }
