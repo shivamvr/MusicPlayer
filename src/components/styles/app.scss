@@ -14,7 +14,7 @@
     min-height: 100vh;
     font-family: 'Georama', sans-serif;
     color: rgb(56, 56, 56);
-    transition: all 0.2s;
+    transition: all 0.3s;
 }
 .night-mode{
     background-color: #061626 ;
@@ -23,6 +23,12 @@
 }
 .library-added{
     width: 75%;
-    margin-left: 25%;
+    padding-left: 25%;
 }
+@media only screen and (max-width: 700px) {
+    .library-added{
+        width: 100%;
+        padding: 0%;
+   }
+   }
 
