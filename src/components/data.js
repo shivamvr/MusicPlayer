@@ -13,28 +13,6 @@ function chillHop() {
     },
 
     {
-      name: "Hero warga",
-      cover:
-        "https://covers.djpunjab.pro/image/488355/Hero-Warga.jpg",
-      artist: "Kaur B",
-      audio: "https://cdnsongs.com/music/data/Single_Track/202004/Hero_Warga/128/Hero_Warga_1.mp3",
-      color: ["#4F2720", "#DF8C41"],
-      id: uuidv4(),
-      active: false,
-    },
-
-    {
-      name: "Feeling",
-      cover:
-        "https://i.scdn.co/image/ab67616d00001e02e93de6e1a1e0f4d597e3e93a",
-      artist: "Kaur B",
-      audio: "https://cdnsongs.com/music/data/Punjabi/201405/Feeling/128/Feeling_1.mp3",
-      color: ["#168B87", "#4CCFCA"],
-      id: uuidv4(),
-      active: false,
-    },
-   
-    {
       name: "Daylight",
       cover:
         "https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg",
