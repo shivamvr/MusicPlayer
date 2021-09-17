@@ -1,21 +1,35 @@
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import './styles/app.scss'
 import Song from './Song'
 import Player from './Player'
-import data from './data'
+// import data from './data'
 import Library from './Library'
 import Nav from './Nav'
 function App(){
    // ---------------------STATES--------------------------
    const audioRef = useRef(null)
-   const [songs, setSongs] = useState(data)
+   const [songs, setSongs] = useState([])
    const [isPlaying, setIsPlaying] = useState(false)
-   const [currentSong, setCurrentSong] = useState(songs[0])
+   const [currentSong, setCurrentSong] = useState({})
    const [songInfo, setSongInfo] = useState({currentTime: '',duration: '', animationPrecentage: 0})
    const [libraryStatus, setLibraryStatus] = useState(false)
    const [nightMode, setNightMode] = useState(false)
    
    // ---------------------FUNCTIONS-------------------------
+   const chillHop = async() =>  {
+      let uri = 'http://localhost:3000/songs'
+      const res = await fetch(uri)
+      const songs = await res.json()
+      console.log('songs:', songs)
+      setSongs(songs)
+      setCurrentSong(songs[0])
+      // return songs
+    }
+    // USE Effect
+    useEffect(()=>{
+      chillHop()
+    },[])
+
    const timeUpdateHandler = (e)=>{
       const currentTime = e.target.currentTime
       const duration = e.target.duration

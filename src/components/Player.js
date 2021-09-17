@@ -1,16 +1,21 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faAngleLeft, faAngleRight, faPause } from '@fortawesome/free-solid-svg-icons'
+
 function Player({isPlaying, setIsPlaying, audioRef, songInfo, setSongInfo, currentSong, setCurrentSong, songs, setSongs}) {
+
+    const len=Object.keys(currentSong).length;
     
-    const inputPercentage = {
+    const inputPercentage = {   
         transform:`translateX(${songInfo.animationPrecentage}%)`
     }
     
     const inputColor = {
-     background: `linear-gradient(to right, ${currentSong.color[0]} , ${currentSong.color[1]})`
+     background: `linear-gradient(to right, ${len ? currentSong.color[0]:""} , ${len ? currentSong.color[1]:""})`
     }
+
     
+
     // -----------FUNCTIONS------------- 
     const playSongHandler = ()=>{
         if(isPlaying){
@@ -78,7 +83,7 @@ function Player({isPlaying, setIsPlaying, audioRef, songInfo, setSongInfo, curre
               {/* ---------------------TIMER------------------- */}
             <div className='time-control'> 
             <p>{getTime(songInfo.currentTime)}</p>
-            <div style={inputColor} className="track">
+            <div style={inputColor } className="track">
             <input onChange={dragHandler} min='0' max={songInfo.duration || 0} type="range" value={songInfo.currentTime}/>
              <div style={inputPercentage} className="animate-track"></div>
             </div>

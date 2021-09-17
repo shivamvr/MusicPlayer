@@ -1,5 +1,16 @@
 import { v4 as uuidv4 } from "uuid";
-function chillHop() {
+
+
+const getSongs = async() =>  {
+  let uri = 'http://localhost:3000/songs'
+  const res = await fetch(uri)
+  const songs = await res.json()
+  console.log('songs:', songs)
+}
+getSongs()
+
+
+function  chillHop() {
   return [
     {
       name: "Beaver Creek",
