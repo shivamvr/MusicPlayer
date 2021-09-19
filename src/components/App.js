@@ -5,6 +5,8 @@ import Player from './Player'
 // import data from './data'
 import Library from './Library'
 import Nav from './Nav'
+
+
 function App(){
    // ---------------------STATES--------------------------
    const audioRef = useRef(null)
@@ -53,6 +55,7 @@ function App(){
          <Library nightMode={nightMode} currentSong={currentSong} setCurrentSong={setCurrentSong} libraryStatus={libraryStatus} songs={songs} setSongs={setSongs} current={setCurrentSong} isPlaying={isPlaying} audioRef={audioRef}/>
          <audio onEnded={songEndHandler} ref={audioRef} onLoadedMetadata={timeUpdateHandler} onTimeUpdate={timeUpdateHandler} src={currentSong.audio}></audio>
       </div>
+     
     )
 }
 export default App

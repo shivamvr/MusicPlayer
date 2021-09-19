@@ -1,0 +1,109 @@
+.dash-container {
+  font-family: 'Georama', sans-serif;
+  display: flex;
+  border: solid springgreen 5px;
+}
+.dash-menu {
+  width: 20%;
+  border: solid red 3px;
+  margin-right: 2rem;
+  padding: 1rem;
+  & li {
+    cursor: pointer;
+    margin: 0.5rem;
+    list-style: none;
+    background: cadetblue;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 0.2rem;
+    &:active {
+      background-color: rgb(69, 124, 126);
+    }
+  }
+}
+.dash-content {
+  width: 60%;
+  border: solid blueviolet 3px;
+  padding: 3rem;
+}
+
+//  ------ADD SONG COMPONENT-----
+.add-song {
+  display: flex;
+  flex-direction: column;
+  & h2 {
+    font-family: 'Georama', sans-serif;
+    color: cadetblue;
+    margin: 1rem;
+  }
+  & input {
+    width: 60%;
+    margin: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.4rem;
+    border: 1.2px solid rgb(216, 216, 216);
+    box-shadow: 0 2px 4px rgb(182, 182, 182);
+    outline: none;
+    color: rgb(83, 83, 83);
+    &:hover {
+      box-shadow: 0 2px 4px cadetblue;
+    }
+  }
+  & button {
+    border: none;
+    outline: none;
+    margin: 1rem;
+    width: 12%;
+    border-radius: 0.4rem;
+    background-color: cadetblue;
+    color: #fff;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    &:active {
+      background: rgb(79, 136, 138);
+    }
+  }
+}
+
+//  ------DELETE SONG COMPONENT-----
+.delete-song {
+  & input {
+    font-size: 110%;
+    width: 60%;
+    margin: 1rem ;
+    padding: 0.7rem 1rem;
+    border-radius: 0.4rem;
+    border: 1.2px solid rgb(216, 216, 216);
+    box-shadow: 0 2px 4px rgb(182, 182, 182);
+    outline: none;
+    color: rgb(83, 83, 83);
+    &:hover {
+      box-shadow: 0 2px 4px cadetblue;
+    }
+  }
+  & h3 {
+    width: fit-content;
+    margin: 1rem;
+    cursor: pointer;
+    margin: 0.5rem;
+    list-style: none;
+    background: rgba(25, 155, 160, 0.562);
+    color: #fff;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    & button {
+      background: #fff;
+      color: cadetblue;
+      border: none;
+      border-radius:.4rem ;
+      padding: .4rem;
+      margin-left: .5rem;
+    }
+  }
+}
+
+.dash-active-item.dash-active-item{
+    border: 1px solid cadetblue;
+    color: #333;
+    background: #fff;
+}

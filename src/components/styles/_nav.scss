@@ -1,46 +1,68 @@
-
-nav{
-    margin: 0 auto;
-    padding-top: 5vh;
-    width: 50%;
-    min-height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    button{
-        z-index: 2;
-        border: 2px solid rgb(65,65,65);
-        border-radius: .2rem;
-        background: transparent;
-        color: rgb(65,65,65);
-        transition: all ease-in 0.3s;
-        padding: 1.5%;
-        cursor: pointer;
-        &:hover{
-            color: #FFF;
-            background: rgb(65,65,65);
-        }
-        span{
-            font-size: 120%;
-            margin-right: 5px;
-        }
-     }
-    h1{ 
-        font-size: 180%;
-        font-weight: 500;
-    }
-}
-.moon{
-    margin-left: .4rem;
-    font-size: 80%;
+nav {
+  margin: 0 auto;
+  padding-top: 5vh;
+  width: 50%;
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    z-index: 2;
+    border: 2px solid rgb(65, 65, 65);
+    border-radius: 0.2rem;
+    background: transparent;
+    color: rgb(65, 65, 65);
+    transition: all ease-in 0.3s;
+    padding: 1.5%;
     cursor: pointer;
-    &:hover{
-        font-size: 78%;
+    &:hover {
+      color: #fff;
+      background: rgb(65, 65, 65);
     }
+    span {
+      font-size: 120%;
+      margin-right: 5px;
+    }
+  }
+  h1 {
+    font-size: 180%;
+    font-weight: 500;
+  }
+}
+// DASHBOARD BUTTON
+.dash-btn {
+    position: absolute;
+    left: .5rem;
+    top: .5rem;
+    transition: all ease-in 0.3s;
+    padding: .7rem .05rem;
+    background: transparent;
+    border: none;
+    & a {
+    color: #333;
+    border: 2px solid #333;
+    cursor: pointer;
+    text-decoration: none;
+    padding: .4rem .8rem;
+    border-radius: .4rem;
+    &:hover {
+      color: #fff;
+      background: rgb(65, 65, 65);
+    }
+  }
 }
 
-@media  screen and (max-width: 900px) {
-    nav{
-        width: 80%;
-    }
-    }
+.moon {
+  margin-left: 0.4rem;
+  font-size: 80%;
+  cursor: pointer;
+  &:hover {
+    font-size: 78%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  nav {
+    width: 80%;
+  }
+}
