@@ -26,11 +26,12 @@ function App(){
       setSongs(songs)
       setCurrentSong(songs[0])
       // return songs
-    }
-    // USE Effect
-    useEffect(()=>{
+   }
+   // USE Effect
+   useEffect(()=>{
       chillHop()
-    },[])
+   },[])
+   console.log('currentSong:', currentSong)
 
    const timeUpdateHandler = (e)=>{
       const currentTime = e.target.currentTime
@@ -42,8 +43,10 @@ function App(){
    const currentIndex = songs.findIndex((song)=> song.id === currentSong.id)
    if(currentIndex === songs.length-1){
       await setCurrentSong(songs[0])
+      // await setSongs([...songs,songs[0].active=true,songs[songs.length-1].active=false])
    }else{
       await setCurrentSong(songs[currentIndex + 1])
+      // await setSongs([...songs,songs[currentIndex+1].active=true,songs[currentIndex].active=false])
    }
    if(isPlaying) audioRef.current.play()
   }

@@ -1,14 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import SongDetails from './SongDetails'
 
 const DeleteSong = () => {
+const[songs,setSongs] = useState([{}])
+
+useEffect(()=>{
+ getSongs()
+},[])
+
+console.log('songs:', songs)
+
+// Getting songs 
+    const getSongs = async() =>  {
+        let uri = 'http://localhost:3000/songs'
+        const res = await fetch(uri)
+        const songs = await res.json()
+        // console.log('songs:', songs)
+        setSongs(songs)
+        // return songs
+      }
     return (
         <div className='delete-song'>
             <input type="text" placeholder='Search'/>
-            <h3>1. song <button>delete</button></h3>
-            <h3>2. song <button>delete</button></h3>
-            <h3>3. song <button>delete</button></h3>
-            <h3>4. song <button>delete</button></h3>
-            <h3>5. song <button>delete</button></h3>
+             <ul>
+                {songs.map(song=> <SongDetails key={song.id} id={song.id} cover={song.cover} name={song.name} artist={song.artist} getSongs={getSongs} />)} 
+             </ul>
         </div>
     )
 }

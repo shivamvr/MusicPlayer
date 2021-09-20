@@ -22,12 +22,13 @@ const AddSong = () => {
     // Adding song object
 
     const createSong = async () => {
-       
-        await fetch('http://localhost:3000/songs',{
+        if(inputs !== initState && inputs.audio !== '' ){
+          await fetch('http://localhost:3000/songs',{
             method: 'POST',
             body: JSON.stringify(inputs),
             headers: {'Content-Type': 'application/Json'}
-        })
+          })
+        } 
         // setInputs(initState)
     }
 
@@ -37,8 +38,12 @@ const AddSong = () => {
             <h2>Add song</h2>
               <input name='name' onChange={onChangeHandler} placeholder='name' type="text" />
               <input name='artist' onChange={onChangeHandler} placeholder='artist' type="text" />
-              <input name='audio' onChange={onChangeHandler} placeholder='audio' type="text" />
-              <input name='cover' onChange={onChangeHandler} placeholder='cover' type="text" />
+              <textarea cols='50' rows='5' name='audio' onChange={onChangeHandler} placeholder='audio' type="text" />
+              <textarea cols='50' rows='5' name='cover' onChange={onChangeHandler} placeholder='cover' type="text" />
+               <div className='color-input-container'>
+                <input type="text" placeholder='color-1' />
+                <input type="text" placeholder='color-2' />
+                </div>
               <button onClick={createSong}>Add</button>
         </div>
     )

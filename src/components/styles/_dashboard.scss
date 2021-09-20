@@ -36,9 +36,9 @@
     color: cadetblue;
     margin: 1rem;
   }
-  & input {
+  & input, textarea {
     width: 60%;
-    margin: 1rem;
+    margin: .7rem;
     padding: 0.7rem 1rem;
     border-radius: 0.4rem;
     border: 1.2px solid rgb(216, 216, 216);
@@ -67,7 +67,7 @@
 
 //  ------DELETE SONG COMPONENT-----
 .delete-song {
-  & input {
+  & input{
     font-size: 110%;
     width: 60%;
     margin: 1rem ;
@@ -106,4 +106,48 @@
     border: 1px solid cadetblue;
     color: #333;
     background: #fff;
+}
+
+.color-input-container{
+  & input{
+    width: 25%;
+  }
+}
+
+
+// --------------DeleteSong-component------------
+
+.song-details{
+  position: relative;
+  // border: solid springgreen;
+  border-radius: .5rem;
+  background: rgb(231, 231, 231);
+  display: flex;
+  width: 40%;
+  margin: .5rem;
+  padding: .5rem;
+  & img{
+    width: 2rem;
+    margin-right: 1rem;
+  }
+  & .name{
+    color: rgba(63, 63, 63, 0.6)
+  }
+  & .artist{
+    font-size: 80%;
+    color: rgba(117, 117, 117, 0.6)
+  }
+  & button{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    padding: 0.4rem .8rem;
+    cursor: pointer;
+    color: #fff;
+    background: cadetblue;
+    border: none;
+    border-radius: .4rem;
+    outline: none;
+    &:active{background:rgb(76, 126, 128);}
+  }
 }
