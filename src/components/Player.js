@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faAngleLeft, faAngleRight, faPause } from '@fortawesome/free-solid-svg-icons'
 
-function Player({isPlaying, setIsPlaying, audioRef, songInfo, setSongInfo, currentSong, setCurrentSong, songs, setSongs}) {
+function Player({activeSongHandler ,isPlaying, setIsPlaying, audioRef, songInfo, setSongInfo, currentSong, setCurrentSong, songs, setSongs}) {
 
     const len=Object.keys(currentSong).length;
     
@@ -44,38 +44,26 @@ function Player({isPlaying, setIsPlaying, audioRef, songInfo, setSongInfo, curre
         if(direction === 'skipBackword'){
             if(currentIndex === 0){
                await setCurrentSong(songs[last])
-               activeLibraryHandler(songs[last])
+               activeSongHandler(songs[last])
             }else{
                await setCurrentSong(songs[currentIndex - 1])
-               activeLibraryHandler(songs[currentIndex - 1])
+               activeSongHandler(songs[currentIndex - 1])
             }
         }
         
         if(direction === 'skipForword'){
             if(currentIndex === last){
                 await setCurrentSong(songs[0])
-                activeLibraryHandler(songs[0])
+                activeSongHandler(songs[0])
             }else{
                 await setCurrentSong(songs[currentIndex + 1])
-                activeLibraryHandler(songs[currentIndex + 1])
+                activeSongHandler(songs[currentIndex + 1])
             }
        }
        if(isPlaying) audioRef.current.play()
 
     }
 
-    const activeLibraryHandler = (nextPrev)=>{
-        const newSongs = songs.map((newSong) => {
-            if (newSong.id === nextPrev.id) {
-              return { ...newSong, active: true }
-            } else {
-              return { ...newSong, active: false }
-            }
-          })
-          setSongs(newSongs)
-          
-          if(isPlaying) audioRef.current.play()
-      }
     // ---------------------------------- 
 
     return (

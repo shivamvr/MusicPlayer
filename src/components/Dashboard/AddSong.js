@@ -28,7 +28,9 @@ const AddSong = () => {
             body: JSON.stringify(inputs),
             headers: {'Content-Type': 'application/Json'}
           })
-        } 
+        }else{
+          alert('name, audio is required')
+        }
         // setInputs(initState)
     }
 

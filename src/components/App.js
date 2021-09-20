@@ -25,13 +25,15 @@ function App(){
       console.log('songs:', songs)
       setSongs(songs)
       setCurrentSong(songs[0])
+      console.log('currentSong: ',currentSong)
+      // activeLibraryHandler(currentSong)
       // return songs
    }
+
    // USE Effect
    useEffect(()=>{
       chillHop()
    },[])
-   console.log('currentSong:', currentSong)
 
    const timeUpdateHandler = (e)=>{
       const currentTime = e.target.currentTime
@@ -43,18 +45,34 @@ function App(){
    const currentIndex = songs.findIndex((song)=> song.id === currentSong.id)
    if(currentIndex === songs.length-1){
       await setCurrentSong(songs[0])
+      activeSongHandler(songs[0])
       // await setSongs([...songs,songs[0].active=true,songs[songs.length-1].active=false])
    }else{
       await setCurrentSong(songs[currentIndex + 1])
+      activeSongHandler(songs[currentIndex + 1])
       // await setSongs([...songs,songs[currentIndex+1].active=true,songs[currentIndex].active=false])
    }
    if(isPlaying) audioRef.current.play()
   }
+
+  // ActiveSongHandler
+  const activeSongHandler = (activeSong)=>{
+   const newSongs = songs.map((newSong) => {
+       if (newSong.id === activeSong.id) {
+         return { ...newSong, active: true }
+       } else {
+         return { ...newSong, active: false }
+       }
+     })
+     setSongs(newSongs)
+     if(isPlaying) audioRef.current.play()
+ }
+
     return (
       <div className={`container ${nightMode ? `night-mode`:''} ${libraryStatus && 'library-added'}`}>
          <Nav nightMode={nightMode} setNightMode={setNightMode} libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus}/>
          <Song currentSong={currentSong} />
-         <Player currentSong={currentSong} setCurrentSong={setCurrentSong} songs={songs} setSongs={setSongs} isPlaying={isPlaying} setIsPlaying={setIsPlaying} audioRef={audioRef} songInfo={songInfo} setSongInfo={setSongInfo}/>
+         <Player activeSongHandler={activeSongHandler} currentSong={currentSong} setCurrentSong={setCurrentSong} songs={songs} setSongs={setSongs} isPlaying={isPlaying} setIsPlaying={setIsPlaying} audioRef={audioRef} songInfo={songInfo} setSongInfo={setSongInfo}/>
          <Library nightMode={nightMode} currentSong={currentSong} setCurrentSong={setCurrentSong} libraryStatus={libraryStatus} songs={songs} setSongs={setSongs} current={setCurrentSong} isPlaying={isPlaying} audioRef={audioRef}/>
          <audio onEnded={songEndHandler} ref={audioRef} onLoadedMetadata={timeUpdateHandler} onTimeUpdate={timeUpdateHandler} src={currentSong.audio}></audio>
       </div>
