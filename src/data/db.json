@@ -119,6 +119,18 @@
         "#C4C4C4"
       ],
       "id": 11
+    },
+    {
+      "name": "Dulquer",
+      "artist": "Sinamika",
+      "audio": "https://cdnsongs.com/music/data/Punjabi/201405/Feeling/128/Feeling_1.mp3",
+      "cover": "https://www.thenewsminute.com/sites/default/files/styles/news_detail/public/Dulquer_singing_HeySinamika_150421_1200.jpg?itok=RlvJshi0",
+      "active": false,
+      "color": [
+        "#0091ff",
+        "#001b47"
+      ],
+      "id": 13
     }
   ]
 }

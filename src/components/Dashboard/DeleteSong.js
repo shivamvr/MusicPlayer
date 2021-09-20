@@ -8,7 +8,6 @@ useEffect(()=>{
  getSongs()
 },[])
 
-console.log('songs:', songs)
 
 // Getting songs 
     const getSongs = async() =>  {

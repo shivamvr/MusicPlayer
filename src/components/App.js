@@ -22,12 +22,8 @@ function App(){
       let uri = 'http://localhost:3000/songs'
       const res = await fetch(uri)
       const songs = await res.json()
-      console.log('songs:', songs)
       setSongs(songs)
       setCurrentSong(songs[0])
-      console.log('currentSong: ',currentSong)
-      // activeLibraryHandler(currentSong)
-      // return songs
    }
 
    // USE Effect
@@ -46,11 +42,9 @@ function App(){
    if(currentIndex === songs.length-1){
       await setCurrentSong(songs[0])
       activeSongHandler(songs[0])
-      // await setSongs([...songs,songs[0].active=true,songs[songs.length-1].active=false])
    }else{
       await setCurrentSong(songs[currentIndex + 1])
       activeSongHandler(songs[currentIndex + 1])
-      // await setSongs([...songs,songs[currentIndex+1].active=true,songs[currentIndex].active=false])
    }
    if(isPlaying) audioRef.current.play()
   }

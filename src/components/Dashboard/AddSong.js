@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 
 const AddSong = () => {
+
     const initState = {
         name: "",
         artist: "",
@@ -9,14 +10,28 @@ const AddSong = () => {
         active: false,
         color: ['','']
       }
+
       const [inputs, setInputs] = useState(initState)
+      const [colorOne, setColorOne] = useState('purple')
+      const [colorTwo, setColorTwo] = useState('#ccc')
 
     // Handler
+
+      const colorOneOnChangeHandler = (e) => {
+        setColorOne(e.target.value)
+        setInputs({...inputs, color: [e.target.value]})
+      }
+      
+      const colorTwoOnChangeHandler = (e) => {
+        setColorTwo(e.target.value)
+        setInputs({...inputs, color: [colorOne,e.target.value]})
+      }
+      
+      
       const onChangeHandler = (e) => {
         const {name, value} = e.target
         setInputs({ ...inputs, [name]: value} )
       }
-      console.log(inputs)
       
 
     // Adding song object
@@ -42,9 +57,10 @@ const AddSong = () => {
               <input name='artist' onChange={onChangeHandler} placeholder='artist' type="text" />
               <textarea cols='50' rows='5' name='audio' onChange={onChangeHandler} placeholder='audio' type="text" />
               <textarea cols='50' rows='5' name='cover' onChange={onChangeHandler} placeholder='cover' type="text" />
+              <div style={{width: '61%' , height: '1rem', backgroundImage: `linear-gradient(to right, ${colorOne} , ${colorTwo})`, borderRadius: '1rem', margin: '.8rem'}}></div>
                <div className='color-input-container'>
-                <input type="text" placeholder='color-1' />
-                <input type="text" placeholder='color-2' />
+                <input onChange={colorOneOnChangeHandler} value={colorOne} name='colorOne' type="color" />
+                <input onChange={colorTwoOnChangeHandler} value={colorTwo} name='colorTwo' type="color" />
                 </div>
               <button onClick={createSong}>Add</button>
         </div>
