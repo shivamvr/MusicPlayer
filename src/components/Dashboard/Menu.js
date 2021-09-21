@@ -15,8 +15,8 @@ const Menu = ({setId}) => {
          title: 'Add songs'},
         {id: 'deleteSong',
          title: 'Delete songs'},
-        {id: 'about',
-         title: 'About'}
+        {id: 'trash',
+         title: 'Trash'}
     ]
     return (
         <ul className='dash-menu'>

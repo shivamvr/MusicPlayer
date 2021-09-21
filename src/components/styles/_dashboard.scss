@@ -1,32 +1,40 @@
 .dash-container {
   font-family: 'Georama', sans-serif;
   display: flex;
-  border: solid springgreen 5px;
+  // border: solid springgreen 5px;
+  position: relative;
 }
 .dash-menu {
+  position: fixed;
   width: 20%;
-  border: solid red 3px;
+  // border: solid red 3px;
+  background: #4C52BC;
   margin-right: 2rem;
-  padding: 1rem;
+  min-height: 100vh;
+  padding: 1rem 0;
+  padding-top: 2rem;
   & li {
     cursor: pointer;
-    margin: 0.5rem;
+    margin: 0.5rem 0;
     list-style: none;
-    background: cadetblue;
-    color: #fff;
+    color: #A9ADDE;
     padding: 1rem 2rem;
-    border-radius: 0.2rem;
-    &:active {
-      background-color: rgb(69, 124, 126);
-    }
   }
 }
+
+.dash-active-item.dash-active-item{
+  color: #fff;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.15), transparent);
+}
+
+
 .dash-content {
+  margin-left: 21%;
   width: 60%;
   height: 90vh;
-  overflow-y: scroll;
-  border: solid blueviolet 3px;
-  padding: 3rem;
+  // border: solid blueviolet 3px;
+  padding-top: 4rem;
+  padding-left: 10%;
 }
 
 //  ------ADD SONG COMPONENT-----
@@ -35,7 +43,7 @@
   flex-direction: column;
   & h2 {
     font-family: 'Georama', sans-serif;
-    color: cadetblue;
+    color: #4C52BC;
     margin: 1rem;
     margin-top: -2rem;
   }
@@ -49,7 +57,7 @@
     outline: none;
     color: rgb(83, 83, 83);
     &:hover {
-      box-shadow: 0 2px 4px cadetblue;
+      box-shadow: 0 2px 4px #4c52bc9a;
     }
   }
   & button {
@@ -58,15 +66,21 @@
     margin: 1rem;
     width: 12%;
     border-radius: 0.4rem;
-    background-color: cadetblue;
+    background-color: #4C52BC;
     color: #fff;
     padding: 0.7rem 1rem;
     cursor: pointer;
     &:active {
-      background: rgb(79, 136, 138);
+      background: #3e4297;
     }
   }
 }
+
+.color-input-container{
+  & input{
+    width: 25%;
+  }
+  }
 
 //  ------DELETE SONG COMPONENT-----
 .delete-song {
@@ -74,6 +88,7 @@
     font-size: 110%;
     width: 60%;
     margin: 1rem ;
+    margin-left: .7rem;
     padding: 0.7rem 1rem;
     border-radius: 0.4rem;
     border: 1.2px solid rgb(216, 216, 216);
@@ -81,7 +96,7 @@
     outline: none;
     color: rgb(83, 83, 83);
     &:hover {
-      box-shadow: 0 2px 4px cadetblue;
+      box-shadow: 0 2px 4px #4c52bca9;
     }
   }
   & h3 {
@@ -90,13 +105,13 @@
     cursor: pointer;
     margin: 0.5rem;
     list-style: none;
-    background: rgba(25, 155, 160, 0.562);
+    background: #4C52BC;
     color: #fff;
     padding: 0.7rem 1rem;
     border-radius: 0.5rem;
     & button {
       background: #fff;
-      color: cadetblue;
+      color: #4C52BC;
       border: none;
       border-radius:.4rem ;
       padding: .4rem;
@@ -105,24 +120,13 @@
   }
 }
 
-.dash-active-item.dash-active-item{
-    border: 1px solid cadetblue;
-    color: #333;
-    background: #fff;
-}
 
-.color-input-container{
-  & input{
-    width: 25%;
-  }
-}
 
 
 // --------------DeleteSong-component------------
 
 .song-details{
   position: relative;
-  // border: solid springgreen;
   border-radius: .5rem;
   background: rgb(231, 231, 231);
   display: flex;
@@ -147,10 +151,25 @@
     padding: 0.4rem .8rem;
     cursor: pointer;
     color: #fff;
-    background: cadetblue;
+    background: #6067e4;
     border: none;
     border-radius: .4rem;
     outline: none;
-    &:active{background:rgb(76, 126, 128);}
+    &:active{background:#4C52BC;}
+  }
+}
+
+// ---------TRASH-COMPONENT----------
+.trash-item-btn{
+  width: 5rem;
+  top: 0rem;
+  right: .5rem;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  & button{
+    position: relative;
   }
 }

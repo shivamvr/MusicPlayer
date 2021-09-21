@@ -119,18 +119,44 @@
         "#C4C4C4"
       ],
       "id": 11
+    }
+  ],
+  "trash": [
+    {
+      "name": "Beaver Daylight",
+      "cover": "https://chillhop.com/wp-content/uploads/2020/09/0255e8b8c74c90d4a27c594b3452b2daafae608d-1024x1024.jpg",
+      "artist": "Aso, Middle School, Aviino",
+      "audio": "https://mp3.chillhop.com/serve.php/?mp3=10075",
+      "color": [
+        "#205950",
+        "#2ab3bf"
+      ],
+      "id": 17,
+      "active": false
     },
     {
-      "name": "Dulquer",
-      "artist": "Sinamika",
-      "audio": "https://cdnsongs.com/music/data/Punjabi/201405/Feeling/128/Feeling_1.mp3",
-      "cover": "https://www.thenewsminute.com/sites/default/files/styles/news_detail/public/Dulquer_singing_HeySinamika_150421_1200.jpg?itok=RlvJshi0",
-      "active": false,
+      "name": "Beaver Creek",
+      "cover": "https://chillhop.com/wp-content/uploads/2020/09/0255e8b8c74c90d4a27c594b3452b2daafae608d-1024x1024.jpg",
+      "artist": "Aso, Middle School, Aviino",
+      "audio": "https://mp3.chillhop.com/serve.php/?mp3=10075",
       "color": [
-        "#0091ff",
-        "#001b47"
+        "#205950",
+        "#2ab3bf"
       ],
-      "id": 13
+      "id": 16,
+      "active": false
+    },
+    {
+      "name": "Beaver",
+      "cover": "https://chillhop.com/wp-content/uploads/2020/09/0255e8b8c74c90d4a27c594b3452b2daafae608d-1024x1024.jpg",
+      "artist": "Aso, Middle School, Aviino",
+      "audio": "https://mp3.chillhop.com/serve.php/?mp3=10075",
+      "color": [
+        "#205950",
+        "#2ab3bf"
+      ],
+      "id": 15,
+      "active": false
     }
   ]
 }

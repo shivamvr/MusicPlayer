@@ -1,6 +1,7 @@
 import React from 'react'
 import AddSong from './AddSong'
 import DeleteSong from './DeleteSong'
+import Trash from './Trash'
 const Content = ({id}) => {
     const renderContent = () => {
         switch(id){
@@ -9,6 +10,9 @@ const Content = ({id}) => {
             }
             case 'deleteSong':{
                 return <DeleteSong/>
+            }
+            case 'trash':{
+                return <Trash/>
             }
             default:{
                 return <AddSong/>

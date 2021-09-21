@@ -12,8 +12,8 @@ const AddSong = () => {
       }
 
       const [inputs, setInputs] = useState(initState)
-      const [colorOne, setColorOne] = useState('purple')
-      const [colorTwo, setColorTwo] = useState('#ccc')
+      const [colorOne, setColorOne] = useState('#4C52BC')
+      const [colorTwo, setColorTwo] = useState('#cccccc')
 
     // Handler
 
@@ -59,8 +59,8 @@ const AddSong = () => {
               <textarea cols='50' rows='5' name='cover' onChange={onChangeHandler} placeholder='cover' type="text" />
               <div style={{width: '61%' , height: '1rem', backgroundImage: `linear-gradient(to right, ${colorOne} , ${colorTwo})`, borderRadius: '1rem', margin: '.8rem'}}></div>
                <div className='color-input-container'>
-                <input onChange={colorOneOnChangeHandler} value={colorOne} name='colorOne' type="color" />
-                <input onChange={colorTwoOnChangeHandler} value={colorTwo} name='colorTwo' type="color" />
+                <input onChange={colorOneOnChangeHandler} value={colorOne} type="color" />
+                <input onChange={colorTwoOnChangeHandler} value={colorTwo} type="color" />
                 </div>
               <button onClick={createSong}>Add</button>
         </div>
