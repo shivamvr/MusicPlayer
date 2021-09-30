@@ -1,56 +1,35 @@
 nav {
+  position: relative;
   margin: 0 auto;
-  padding-top: 5vh;
   width: 50%;
   min-height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  button {
-    z-index: 2;
-    border: 2px solid rgb(65, 65, 65);
-    border-radius: 0.2rem;
-    background: transparent;
-    color: rgb(65, 65, 65);
-    transition: all ease-in 0.3s;
-    padding: 1.5%;
-    cursor: pointer;
-    &:hover {
-      color: #fff;
-      background: rgb(65, 65, 65);
-    }
-    span {
-      font-size: 120%;
-      margin-right: 5px;
-    }
-  }
+  padding-top: .5rem;
   h1 {
     font-size: 180%;
     font-weight: 500;
   }
-}
-// DASHBOARD BUTTON
-.dash-btn {
+  h1+svg{
     position: absolute;
-    left: .5rem;
-    top: .5rem;
-    transition: all ease-in 0.3s;
-    padding: .7rem .05rem;
-    background: transparent;
-    border: none;
-    & a {
-    color: #333;
-    border: 2px solid #333;
+    z-index: 2;
+    padding: .5rem;
+    top: center;
     cursor: pointer;
-    text-decoration: none;
-    padding: .4rem .8rem;
-    border-radius: .4rem;
-    &:hover {
-      color: #fff;
-      background: rgb(65, 65, 65);
+    right: 5%;
+    border-radius: 50%;
+    background: #E1EEFD;
+    border: 1px solid #c8daf1;
+    box-shadow:  -2px -2px 4px rgb(255, 255, 255), 2px 2px 4px #a4b6cf;
+    &:active{
+      background: #7AA9FF;
+        color:#fff;
+        box-shadow: inset .5rem .5rem 1rem #4389FF;
     }
   }
 }
+
 
 .moon {
   margin-left: 0.4rem;
@@ -64,5 +43,21 @@ nav {
 @media screen and (max-width: 900px) {
   nav {
     width: 80%;
+  }
+}
+
+//   --------------------------NIGHT-MODE-STYLES---------------------
+
+.nav-night{
+  h1+svg{
+    border: none;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.808),  -3px -3px 8px rgba(255, 255, 255, 0.267), inset 4px 4px .5rem rgba(255, 255, 255, 0.233);
+    &:active{
+        border: rgb(110, 110, 110) solid 1px;
+        color: #333;
+        background: rgb(231, 231, 231);
+        box-shadow: inset 4px 4px 1rem #7a7a7a,inset -4px -4px 1rem #ccc;
+    }
+
   }
 }

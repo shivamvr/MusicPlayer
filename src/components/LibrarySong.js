@@ -1,5 +1,5 @@
 import React from 'react'
-function Song({song, songs, setSongs, current, audioRef, isPlaying}) {
+function Song({song, songs, setSongs, current, audioRef, isPlaying,nightMode}) {
     const songClickHandler = async()=>{
         await current(song)
         const newSongs = songs.map((newSong) => {
@@ -15,7 +15,7 @@ function Song({song, songs, setSongs, current, audioRef, isPlaying}) {
     }
    
     return (
-        <div onClick={songClickHandler} className={`library-song ${song.active ? 'selected':''}`}>
+        <div onClick={songClickHandler} className={`library-song ${song.active ? 'selected':''} ${nightMode && song.active && 'selected-night'}`}>
          <img src={song.cover} alt="" />
          <div className='description'>
          <h3>{song.name}</h3>

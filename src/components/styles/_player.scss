@@ -16,18 +16,30 @@
         width: 100%;
         -webkit-appearance: none;
     } 
-  
 }
 
 .player-controlls{
+//  border: solid springgreen;
  width: 40%;
  display: flex;
  justify-content: space-between;
  align-items: center;
- padding: 1rem;
+ padding: .5rem;
  svg{
+     border: solid #E4F1FF 1px;
+     border-radius: 50%;
      cursor: pointer;
- }
+     padding: .7rem;
+      box-shadow: 3px 3px 8px #3579c2,  -3px -3px 8px #fff, inset 4px 4px 1rem #fff;
+    }
+.svg-click{
+
+        &:active{
+            background: #7AA9FF;
+            color:#fff;
+            box-shadow: inset .5rem .5rem 1rem #4389FF;
+        }
+   }
 }
 input[type = "range"]{
     &:focus{
@@ -58,8 +70,13 @@ input[type = "range"]{
     height: 1.2rem;
     transform: translateX(0%);
     pointer-events: none;
-    background-color: #ccc;
-    transition: all ease-in 0.05s;
+    background-color: #E1EEFD;
+    box-shadow: inset 2px 2px 4px #b0cbff, inset -2px -2px 4px #fff ;
+}
+.pause-btn.pause-btn{
+    background: #7AA9FF;
+    color:#fff; 
+    box-shadow: inset .5rem .5rem 1rem #4389FF;
 }
 
 @media screen and (max-width: 930px) {
@@ -78,5 +95,35 @@ input[type = "range"]{
     .time-control{
         width: 90%;
     }
-   
-  }
+    
+}
+
+
+
+// --------------------------NIGHT-MODE-STYLES---------------------
+.player-controlls-night{
+    svg{
+        border: none;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.808),  -3px -3px 8px rgba(255, 255, 255, 0.267), inset 4px 4px .5rem rgba(255, 255, 255, 0.233);
+    }
+    .svg-click-night{
+        &:active{
+            border: rgb(70, 70, 70) solid 1px;
+            background: rgb(231, 231, 231);
+            color: #333;
+            box-shadow: inset 4px 4px 1rem #7a7a7a,inset -4px -4px 1rem #ccc;
+           }
+       }  
+}
+
+.animate-track-night{
+    background: rgb(148, 148, 148);
+    box-shadow: inset 2px 2px 4px #4b4b4b, inset -2px -2px 4px #ccc ;
+}
+
+.pause-btn-night.pause-btn-night{
+    border: 1px solid transparent;
+    background: rgb(231, 231, 231);
+    color:#333; 
+    box-shadow: inset 4px 4px 1rem #7a7a7a,inset -4px -4px 1rem #ccc;
+}

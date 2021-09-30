@@ -3,12 +3,13 @@
   display: flex;
   // border: solid springgreen 5px;
   position: relative;
+  background: #E6F0FD;
 }
 .dash-menu {
   position: fixed;
   width: 20%;
   // border: solid red 3px;
-  background: #4C52BC;
+  background: #70829B;
   margin-right: 2rem;
   min-height: 100vh;
   padding: 1rem 0;
@@ -17,7 +18,7 @@
     cursor: pointer;
     margin: 0.5rem 0;
     list-style: none;
-    color: #A9ADDE;
+    color: #ccc;
     padding: 1rem 2rem;
   }
 }
@@ -31,7 +32,8 @@
 .dash-content {
   margin-left: 21%;
   width: 60%;
-  height: 90vh;
+  min-height: 90vh;
+  background: #E6F0FD;
   // border: solid blueviolet 3px;
   padding-top: 4rem;
   padding-left: 10%;
@@ -43,7 +45,7 @@
   flex-direction: column;
   & h2 {
     font-family: 'Georama', sans-serif;
-    color: #4C52BC;
+    color: #70829B;
     margin: 1rem;
     margin-top: -2rem;
   }
@@ -51,27 +53,26 @@
     width: 60%;
     margin: .7rem;
     padding: 0.7rem 1rem;
-    border-radius: 0.4rem;
-    border: 1.2px solid rgb(216, 216, 216);
-    box-shadow: 0 2px 4px rgb(182, 182, 182);
+    border-radius: .7rem;
+    border: 1px solid #c1d8f8;
     outline: none;
-    color: rgb(83, 83, 83);
-    &:hover {
-      box-shadow: 0 2px 4px #4c52bc9a;
-    }
+    color: #70829B;
+    background: #fff;
+    box-shadow:  -1px -1px 2px #fff, 1px 1px 2px #a4b6cf;
   }
   & button {
-    border: none;
+    border: 1px solid #c1d8f8;
     outline: none;
     margin: 1rem;
     width: 12%;
     border-radius: 0.4rem;
-    background-color: #4C52BC;
+    background-color: #70829B;
     color: #fff;
     padding: 0.7rem 1rem;
     cursor: pointer;
+    box-shadow:  -1px -1px 4px #fff, 1px 1px 4px #9aacc5;
     &:active {
-      background: #3e4297;
+      background: #4e5e75;
     }
   }
 }
@@ -88,15 +89,15 @@
     font-size: 110%;
     width: 60%;
     margin: 1rem ;
-    margin-left: .7rem;
+    margin-left: .3rem;
     padding: 0.7rem 1rem;
     border-radius: 0.4rem;
     border: 1.2px solid rgb(216, 216, 216);
-    box-shadow: 0 2px 4px rgb(182, 182, 182);
     outline: none;
     color: rgb(83, 83, 83);
+    box-shadow:  -1px -1px 2px #fff, 1px 1px 2px #a4b6cf;
     &:hover {
-      box-shadow: 0 2px 4px #4c52bca9;
+    box-shadow:  -1px -1px 4px #fff, 1px 1px 4px #a4b6cf;
     }
   }
   & h3 {
@@ -105,13 +106,13 @@
     cursor: pointer;
     margin: 0.5rem;
     list-style: none;
-    background: #4C52BC;
+    background: #70829B;
     color: #fff;
     padding: 0.7rem 1rem;
     border-radius: 0.5rem;
     & button {
       background: #fff;
-      color: #4C52BC;
+      color: #70829B;
       border: none;
       border-radius:.4rem ;
       padding: .4rem;
@@ -128,11 +129,12 @@
 .song-details{
   position: relative;
   border-radius: .5rem;
-  background: rgb(231, 231, 231);
+  background: #fff;
   display: flex;
   width: 40%;
   margin: .5rem;
   padding: .5rem;
+  box-shadow:  -1px -1px 2px #fff, 1px 1px 2px #a4b6cf;
   & img{
     width: 2rem;
     margin-right: 1rem;
@@ -151,11 +153,12 @@
     padding: 0.4rem .8rem;
     cursor: pointer;
     color: #fff;
-    background: #6067e4;
+    background: #7e92af;
     border: none;
     border-radius: .4rem;
     outline: none;
-    &:active{background:#4C52BC;}
+    box-shadow:  -1px -1px 4px #fff, 1px 1px 4px #a4b6cf;
+    &:active{background:#62738a;}
   }
 }
 

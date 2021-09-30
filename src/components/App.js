@@ -13,6 +13,8 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('')
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentSong, setCurrentSong] = useState({})
+  const [loopStatus, setLoopStatus] = useState('loopOff')
+  const [isMute, setIsMute] = useState(false)
   const [songInfo, setSongInfo] = useState({
     currentTime: '',
     duration: '',
@@ -63,16 +65,59 @@ function App() {
     })
   }
   const songEndHandler = async () => {
-    const currentIndex = songs.findIndex((song) => song.id === currentSong.id)
-    if (currentIndex === songs.length - 1) {
-      await setCurrentSong(songs[0])
-      activeSongHandler(songs[0])
-    } else {
-      await setCurrentSong(songs[currentIndex + 1])
-      activeSongHandler(songs[currentIndex + 1])
+
+    // Loop All
+    if(loopStatus === 'loopAll'){
+      const currentIndex = songs.findIndex((song) => song.id === currentSong.id)
+      if (currentIndex === songs.length - 1) {
+        await setCurrentSong(songs[0])
+        activeSongHandler(songs[0])
+      } else {
+        await setCurrentSong(songs[currentIndex + 1])
+        activeSongHandler(songs[currentIndex + 1])
+      }
+      if (isPlaying) audioRef.current.play()
     }
-    if (isPlaying) audioRef.current.play()
+    // Loop One
+    else if(loopStatus === 'loopOne'){
+      const currentIndex = songs.findIndex((song) => song.id === currentSong.id)
+        await setCurrentSong(songs[currentIndex])
+        activeSongHandler(songs[currentIndex])
+      if (isPlaying) audioRef.current.play()
+     }
+    // Loop off
+    else if(loopStatus === 'loopOff'){
+      const currentIndex = songs.findIndex((song) => song.id === currentSong.id)
+        await setCurrentSong(songs[currentIndex])
+        activeSongHandler(songs[currentIndex])
+      audioRef.current.pause()
+      setIsPlaying(false)
   }
+}
+
+
+  // OnClick Loop Handler
+   const loopHandler = () => {
+     if(loopStatus === 'loopOff'){
+       setLoopStatus('loopAll')
+     }else if(loopStatus === 'loopAll'){
+       setLoopStatus('loopOne')
+     }else if(loopStatus == 'loopOne'){
+       setLoopStatus('loopOff')
+     }
+   }
+  
+  // Mute Handler
+  const muteHandler = () => {
+    if(!isMute){
+      audioRef.current.muted = true
+      setIsMute(true)
+    }else{
+      audioRef.current.muted = false
+      setIsMute(false)
+    }
+  }
+  
 
   // ActiveSongHandler
   const activeSongHandler = (activeSong) => {
@@ -99,8 +144,9 @@ function App() {
         libraryStatus={libraryStatus}
         setLibraryStatus={setLibraryStatus}
       />
-      <Song currentSong={currentSong} />
+      <Song currentSong={currentSong} nightMode={nightMode} />
       <Player
+        nightMode={nightMode}
         activeSongHandler={activeSongHandler}
         currentSong={currentSong}
         setCurrentSong={setCurrentSong}
@@ -111,6 +157,10 @@ function App() {
         audioRef={audioRef}
         songInfo={songInfo}
         setSongInfo={setSongInfo}
+        loopHandler={loopHandler}
+        loopStatus={loopStatus}
+        isMute={isMute}
+        muteHandler={muteHandler}
       />
       <Library
         nightMode={nightMode}

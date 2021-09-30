@@ -11,14 +11,16 @@
 }
 .container{
     margin: 0 auto;
+    background: #E1EEFD;
     width: 100%;
     min-height: 100vh;
     font-family: 'Georama', sans-serif;
     color: rgb(56, 56, 56);
+    color: #70829B;
     transition: all 0.3s;
 }
 .night-mode{
-    background-color: #061626 ;
+    background-color: #23272C ;
     color: rgb(204, 204, 204);
     border-color:rgb(204, 204, 204) ;
 }

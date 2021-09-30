@@ -10,9 +10,9 @@ const AddSong = () => {
         active: false,
         color: ['','']
       }
-
+      
       const [inputs, setInputs] = useState(initState)
-      const [colorOne, setColorOne] = useState('#4C52BC')
+      const [colorOne, setColorOne] = useState('#748FB4')
       const [colorTwo, setColorTwo] = useState('#cccccc')
 
     // Handler

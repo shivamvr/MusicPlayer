@@ -13,10 +13,45 @@
  transform: translateX(-100%);
  opacity: 0;
  transition: all ease-in 0.4s;
- background-color: #fff;
- box-shadow: 2px 2px 50px rgba(163, 163, 163, 0.637);
+ background-color: #E1EEFDff;
+ box-shadow: 2px 2px 50px #aec0d8;
 }
-
+// DASHBOARD BUTTON
+.dash-btn {
+    background: transparent;
+    border: none;
+    margin-left: .4rem;
+    & a {
+    color: #586b86;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: .4rem;
+    & svg{
+        font-size: 230%;
+        display: block;
+        padding: 0;
+        margin-bottom: -.5rem;
+    }
+    &:active {
+      color: #94c6ff;
+    }
+  }
+}
+.library-search{
+  width: 85%;
+  border: 1px solid #a3b9d8;
+  border-radius: 1rem;
+  background: #E1EEFD;
+  margin: 1rem auto;
+  margin-top: -1rem;
+  color: #4b5c74;
+  padding: .7rem 1rem;
+  outline: none;
+  box-shadow: inset 4px 4px 1rem #aec0d8,inset -4px -4px 1rem #fff;
+  &::placeholder{
+      color: #6c7d96;
+  }
+}
 .library-song{
     cursor: pointer;
     border-radius: .4rem;
@@ -73,7 +108,7 @@
 .library-night{
     box-shadow: none;
     border-right: 1px solid  rgb(82, 82, 82);
-    background-color: #061626;
+    background-color: #23272C;
 }
 // --------------------MEDIA-QUERY--------------
 
@@ -113,4 +148,13 @@
             margin-right: 5%;
         }
   }
-  
+
+  //  --------------------------NIGHT-MODE-STYLES---------------------
+  .library-search-night{
+    border: #ccc solid 1px;
+    background: rgb(231, 231, 231);
+    box-shadow: inset 4px 4px 1rem #7a7a7a,inset -4px -4px 1rem #ccc;
+  }
+  .selected-night{
+    background-color: rgba(124, 124, 124, 0.207);
+  }
