@@ -35,7 +35,7 @@ useEffect(()=>{
         <div className='delete-song'>
             <input onChange={searchOnchangeHandler} value={searchTerm} type="text" placeholder='Search'/>
              <ul>
-                {songs.map(song=> <SongDetails key={song.id} id={song.id} cover={song.cover} name={song.name} artist={song.artist} getSongs={getSongs} />)} 
+                {songs.map(song => <SongDetails key={song.id} id={song.id} cover={song.cover} name={song.name} artist={song.artist} getSongs={getSongs} />)} 
              </ul>
         </div>
     )

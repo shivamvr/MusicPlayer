@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 import App from './components/App'
 import DashBoardHome from './components/Dashboard/DashBoardHome'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route,Switch } from 'react-router-dom'
 ReactDOM.render(  
   <React.StrictMode>
     <BrowserRouter>
+    <Switch>
           <Route path="/" exact>
             <App />
           </Route>
           <Route path="/Dashboard">
             <DashBoardHome />
           </Route>
+      </Switch>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

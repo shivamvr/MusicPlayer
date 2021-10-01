@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { v4 as uuid } from 'uuid'
 
 const AddSong = () => {
 
@@ -7,6 +8,7 @@ const AddSong = () => {
         artist: "",
         audio: "",
         cover: "",
+        id: '',
         active: false,
         color: ['','']
       }
@@ -14,7 +16,8 @@ const AddSong = () => {
       const [inputs, setInputs] = useState(initState)
       const [colorOne, setColorOne] = useState('#748FB4')
       const [colorTwo, setColorTwo] = useState('#cccccc')
-
+      
+      console.log('inputs:', inputs)
     // Handler
 
       const colorOneOnChangeHandler = (e) => {
@@ -30,7 +33,7 @@ const AddSong = () => {
       
       const onChangeHandler = (e) => {
         const {name, value} = e.target
-        setInputs({ ...inputs, [name]: value} )
+        setInputs({ ...inputs, [name]: value,id: uuid()} )
       }
       
 

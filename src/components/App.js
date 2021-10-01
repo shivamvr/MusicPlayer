@@ -40,7 +40,7 @@ function App() {
   // USE Effect
   useEffect(() => {
     chillHop()
-   }, [])
+   },[])
    
    const searchOnchangeHandler = (e) => {
       const { value } = e.target
@@ -102,7 +102,7 @@ function App() {
        setLoopStatus('loopAll')
      }else if(loopStatus === 'loopAll'){
        setLoopStatus('loopOne')
-     }else if(loopStatus == 'loopOne'){
+     }else if(loopStatus === 'loopOne'){
        setLoopStatus('loopOff')
      }
    }
