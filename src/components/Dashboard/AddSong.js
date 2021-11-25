@@ -17,7 +17,6 @@ const AddSong = () => {
       const [colorOne, setColorOne] = useState('#748FB4')
       const [colorTwo, setColorTwo] = useState('#cccccc')
       
-      console.log('inputs:', inputs)
     // Handler
 
       const colorOneOnChangeHandler = (e) => {
@@ -41,7 +40,8 @@ const AddSong = () => {
 
     const createSong = async () => {
         if(inputs !== initState && inputs.audio !== '' ){
-          await fetch('http://localhost:3000/songs',{
+          const url = process.env.REACT_APP_URL
+          await fetch(`${url}/songs`,{
             method: 'POST',
             body: JSON.stringify(inputs),
             headers: {'Content-Type': 'application/Json'}

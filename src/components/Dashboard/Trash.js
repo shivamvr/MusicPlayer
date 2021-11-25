@@ -11,7 +11,8 @@ const Trash = () => {
        
 
     const getSongs = async(term) =>  {
-        let uri = 'http://localhost:3000/trash?_sort=id&_order=desc'
+        const url = process.env.REACT_APP_URL
+        let uri = `${url}/trash?_sort=id&_order=desc`
         const res = await fetch(uri)
         const songs = await res.json()
         setSongs(songs)

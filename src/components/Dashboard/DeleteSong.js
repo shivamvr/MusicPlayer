@@ -12,7 +12,8 @@ useEffect(()=>{
 
 // Getting songs 
     const getSongs = async(term) =>  {
-        let uri = 'http://localhost:3000/songs?_sort=id&_order=desc'
+        const url = process.env.REACT_APP_URL
+        let uri = `${url}/songs?_sort=id&_order=desc`
         if(searchTerm){
             uri += `&q=${term}`
         }
