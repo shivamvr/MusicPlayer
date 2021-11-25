@@ -25,7 +25,8 @@ function App() {
 
   // ---------------------FUNCTIONS-------------------------
   const chillHop = async (term) => {
-    let uri = 'http://localhost:3000/songs?_sort=id&_order=asce'
+    const url = process.env.REACT_APP_URL
+    let uri = `${url}/songs?_sort=id&_order=asce`
     if(searchTerm) {
       uri = uri + `&q=${term}`
     }
