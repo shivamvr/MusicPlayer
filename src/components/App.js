@@ -79,6 +79,7 @@ function App() {
       }
       if (isPlaying) audioRef.current.play()
     }
+
     // Loop One
     else if(loopStatus === 'loopOne'){
       const currentIndex = songs.findIndex((song) => song.id === currentSong.id)
@@ -86,6 +87,7 @@ function App() {
         activeSongHandler(songs[currentIndex])
       if (isPlaying) audioRef.current.play()
      }
+     
     // Loop off
     else if(loopStatus === 'loopOff'){
       const currentIndex = songs.findIndex((song) => song.id === currentSong.id)
